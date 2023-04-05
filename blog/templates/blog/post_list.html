@@ -4,19 +4,15 @@
   </head>
   <body>
     <div>
-      <h1><a href="">Minji's blog</a></h1>
+      <h1><a href="/">Minji's blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-      <p>published: 05.04.2023, 21:03</p>
-      <h2><a href="">My first post</a></h2>
-      <p>늦잠좀 그만자렴 민지쿤</p>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-      <p>published: 05.04.2023, 21:06</p>
-      <h2><a href="">My second post</a></h2>
-      <p>비오는 소리가 참 좋구만</p>
-    </div>
+    {% endfor %}
   </body>
 </html>
